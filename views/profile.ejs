@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <title>RichInk</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+      <section class="profileImg">
+        <img src="img/profilePage.png">
+      </section>
+        <section class="profileButton">
+        <a href="/logout" class="btn btn-default btn-sm" id="logoutProfile">Logout</a>
+        </section>
+    </div>
+
+    <div class="aboutSection">
+      <p>Welcome to RichInk, a vibrant community crafted for book enthusiasts with a focus on fostering connections between readers who identify as BIPOC and BIPOC authors. Our platform is designed to be a haven where we access literature tailored to our experiences, authored by individuals who share our cultural backgrounds and life journeys. Join us on this enriching literary voyage as we eagerly await the discoveries and connections you'll make!</p>
+    </div>
+
+
+        <!-- LOCAL INFORMATION -->
+        <!-- <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span>Welcome User!</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div> -->
+        <div class="page-header text-center">
+          <img src="img/bookLog.png" class="bookLog">
+          <p>A place to add all the books you have read and that are on you TBR list</p>
+        </div>
+
+        <div class="form text-center">
+        <form action="/messages" method="POST">
+          <input type="text" placeholder="Name of Book" name="book" class="input">
+          <input type="text" placeholder="Name of Author" name="author" class="input">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+        <div class="bookList">
+          <div class="row">
+            <div class="column">
+              <div class="listOne">
+                <h3>To-Read:</h3>
+                <ul id="booksToRead">
+                  <% for(var i=0; i<messages.length; i++) {%> 
+                    <!-- this conditional will show if the li has a class of complete or not complete -->
+                    <li class="<%= messages[i].read ? 'complete' : 'notComplete' %>">
+                      <span><%= messages[i].book %></span>
+                      <span><%= messages[i].author %></span>
+                      <span><i class="fa fa-solid fa-check" aria-hidden="true"></i></span>
+                      <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                    </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+        
+            <div class="column">
+              <div class="listTwo">
+                <h3>Finished Reading:</h3>
+                <ul id="booksRead">
+                  <% for (var i = 0; i < messages.length; i++) { %>
+                      <% if (messages[i].read) { %>
+                      <li class="complete">
+                        <span><%= messages[i].book %></span>
+                      <span><%= messages[i].author %></span>
+                        <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                      </li>
+                    <% } %>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+<script src="main.js"></script>
+
+</body>
+</html>
