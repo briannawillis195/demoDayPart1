@@ -6,8 +6,6 @@
 <b>Tech Used:</b> ExpressJS, JavaScript, Node.js and MongoDB
 
 ## Installation
-<img width="1438" alt="Screenshot 2023-11-12 at 7 54 46 PM" src="https://github.com/briannawillis195/demoDayPart1/assets/143905399/194f7fe5-51b8-4fa9-a3c1-d22afbf2f5b3">
-<img width="1419" alt="Screenshot 2023-11-12 at 7 55 13 PM" src="https://github.com/briannawillis195/demoDayPart1/assets/143905399/ab57164b-91ae-4ca6-bed0-766a2a2f0e9e">
 
 
 1. Clone repo
